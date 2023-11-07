@@ -26,6 +26,7 @@ import { AppController } from './app.controller';
       authServerUrl: process.env.AUTH_SERVER_URL,
       realm: process.env.REALM,
       clientId: process.env.CLIENT_ID,
+      realmPublicKey: process.env.PUBLIC_KEY,
       secret: process.env.SECRET,
       policyEnforcement: PolicyEnforcementMode.PERMISSIVE, // optional
       tokenValidation: TokenValidation.ONLINE, // optional
