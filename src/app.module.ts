@@ -15,6 +15,7 @@ import {
 import { APP_GUARD } from '@nestjs/core';
 import * as process from 'process';
 import { ConfigModule } from '@nestjs/config';
+import { AppController } from './app.controller';
 
 @Module({
   imports: [
@@ -35,7 +36,7 @@ import { ConfigModule } from '@nestjs/config';
     HealthModule,
     HpmdlvModule,
   ],
-  controllers: [],
+  controllers: [AppController],
   providers: [
     {
       provide: APP_GUARD,
