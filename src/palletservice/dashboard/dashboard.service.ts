@@ -10,7 +10,10 @@ export class DashboardService {
     return this.client.send('findAllDashboard', user);
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} dashboard`;
+  findOne(id: string, user: UserInfo) {
+    return this.client.send('findOneSlowmove', {
+      id,
+      user,
+    });
   }
 }
