@@ -4,8 +4,8 @@ export class CreateHistoryDto {
   @IsNotEmpty()
   kode: string;
 
-  @IsNotEmpty()
-  delivery_kode: string;
+  // delivery_kode: string;
 
-  destination?: string;
+  @IsNotEmpty()
+  destination: string;
 }
