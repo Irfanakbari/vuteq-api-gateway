@@ -1,4 +1,4 @@
-import { Inject, Injectable, Logger } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { ExcelService } from '../utils/excel/excel.service';
 import { ClientProxy, RpcException } from '@nestjs/microservices';
 import { catchError, throwError } from 'rxjs';
@@ -39,7 +39,6 @@ export class OrdersService {
           ),
         );
     } catch (error) {
-      Logger.log(error);
       // Handle error, e.g., return an error response
       throw new Error('Error processing Excel file');
     }

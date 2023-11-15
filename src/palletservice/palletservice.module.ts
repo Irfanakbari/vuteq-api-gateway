@@ -28,9 +28,8 @@ import { HistoryOpController } from './operator/history.controller';
 import { HistoryOpService } from './operator/history.service';
 import { OpnameController } from './laporan/opname/stok.controller';
 import { OpnameService } from './laporan/opname/stok.service';
-import { RepairsModule } from './repairs/repairs.module';
-import {RepairsController} from "./repairs/repairs.controller";
-import {RepairsService} from "./repairs/repairs.service";
+import { RepairsController } from './repairs/repairs.controller';
+import { RepairsService } from './repairs/repairs.service';
 
 @Module({
   controllers: [
@@ -49,7 +48,7 @@ import {RepairsService} from "./repairs/repairs.service";
     DeliveryController,
     HistoryOpController,
     OpnameController,
-      RepairsController
+    RepairsController,
   ],
   providers: [
     CustomerService,
@@ -66,7 +65,7 @@ import {RepairsService} from "./repairs/repairs.service";
     DeliveryService,
     HistoryOpService,
     OpnameService,
-      RepairsService
+    RepairsService,
   ],
 })
 export class PalletserviceModule {}

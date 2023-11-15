@@ -31,6 +31,14 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
           port: 3300,
         },
       },
+      {
+        name: 'ANSEI_SERVICE',
+        transport: Transport.TCP,
+        options: {
+          host: 'localhost',
+          port: 3400,
+        },
+      },
     ]),
   ],
   exports: [ClientsModule],
