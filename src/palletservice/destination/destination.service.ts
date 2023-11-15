@@ -44,4 +44,8 @@ export class DestinationService {
         ),
       );
   }
+
+  getOneDestination(kode: string) {
+    return this.client.send('findOneDestination', kode);
+  }
 }

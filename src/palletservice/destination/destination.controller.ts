@@ -36,6 +36,12 @@ export class DestinationController {
     return this.destinationService.deleteDestination(id);
   }
 
+  @Get(':kode')
+  @Roles({ roles: ['operator'] })
+  getOneDestination(@Param('kode') kode: string) {
+    return this.destinationService.getOneDestination(kode);
+  }
+
   @Patch(':id')
   @Roles({ roles: ['super'] })
   updateDestination(
