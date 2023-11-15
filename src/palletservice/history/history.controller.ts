@@ -63,7 +63,7 @@ export class HistoryController {
     return this.historyService.createHistory(data, user);
   }
 
-  @Patch(':id')
+  @Patch()
   @Roles({ roles: ['operator'] })
   updateHistory(
     @Body() data: UpdateHistoryDto,
