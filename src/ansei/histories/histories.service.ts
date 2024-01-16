@@ -6,7 +6,7 @@ import { UserInfo } from '../../interfaces/userinfo.interface';
 
 @Injectable()
 export class HistoriesService {
-  constructor(@Inject('HPM_DLV_SERVICE') private client: ClientProxy) {}
+  constructor(@Inject('ANSEI_SERVICE') private client: ClientProxy) {}
   create(createHistoryDto: CreateHistoryDto, user: UserInfo) {
     return this.client
       .send('createHistory', {

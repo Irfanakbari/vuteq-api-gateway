@@ -1,9 +1,9 @@
 import { IsNotEmpty } from 'class-validator';
 
-export class CreateEmailsDto {
+export class CreateHistoryDto {
   @IsNotEmpty()
-  email: string;
+  id: string;
 
   @IsNotEmpty()
-  name: string;
+  part_number: string;
 }

@@ -7,7 +7,7 @@ import {
   Roles,
 } from 'nest-keycloak-connect';
 
-@Controller('hpmdlv/histories')
+@Controller('ansei/histories')
 export class HistoriesController {
   constructor(private readonly historiesService: HistoriesService) {}
 
