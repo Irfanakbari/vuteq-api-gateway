@@ -3,10 +3,11 @@ import { AnseiController } from './ansei.controller';
 import { RawController } from './raw/raw.controller';
 import { RawService } from './raw/raw.service';
 import { ExcelService } from './utils/excel/excel.service';
-import { HistoriesController } from './histories/histories.controller';
+import { HistoriesModule } from './histories/histories.module';
 
 @Module({
-  controllers: [AnseiController, RawController, HistoriesController],
+  controllers: [AnseiController, RawController],
   providers: [RawService, ExcelService],
+  imports: [HistoriesModule],
 })
 export class AnseiModule {}
