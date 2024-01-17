@@ -27,7 +27,7 @@ export class RawController {
   }
 
   @Get()
-  @Roles({ roles: ['hpm-dlv-system:super'], mode: RoleMatchingMode.ANY })
+  @Roles({ roles: ['ansei-system:super'], mode: RoleMatchingMode.ANY })
   findAll(
     @Query('page') pageNumber?: number,
     @Query('limit') pageSize?: number,

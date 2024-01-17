@@ -12,7 +12,7 @@ export class HistoriesController {
   constructor(private readonly historiesService: HistoriesService) {}
 
   @Post()
-  @Roles({ roles: ['hpm-dlv-system:operator'], mode: RoleMatchingMode.ANY })
+  @Roles({ roles: ['ansei-system:operator'], mode: RoleMatchingMode.ANY })
   create(
     @Body() createHistoryDto: CreateHistoryDto,
     @AuthenticatedUser() user: any,
@@ -21,7 +21,7 @@ export class HistoriesController {
   }
 
   @Post('failed')
-  @Roles({ roles: ['hpm-dlv-system:operator'], mode: RoleMatchingMode.ANY })
+  @Roles({ roles: ['ansei-system:operator'], mode: RoleMatchingMode.ANY })
   createFailed(
     @Body() createHistoryDto: CreateHistoryDto,
     @AuthenticatedUser() user: any,
@@ -30,7 +30,7 @@ export class HistoriesController {
   }
 
   @Get()
-  @Roles({ roles: ['hpm-dlv-system:super'], mode: RoleMatchingMode.ANY })
+  @Roles({ roles: ['ansei-system:super'], mode: RoleMatchingMode.ANY })
   findAll(
     @Query('page') pageNumber?: number,
     @Query('limit') pageSize?: number,
