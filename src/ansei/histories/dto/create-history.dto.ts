@@ -5,5 +5,5 @@ export class CreateHistoryDto {
   // id: string;
 
   @IsNotEmpty()
-  part_number: string;
+  po_number: string;
 }
