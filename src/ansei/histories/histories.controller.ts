@@ -42,6 +42,6 @@ export class HistoriesController {
     @Query('page') pageNumber?: number,
     @Query('limit') pageSize?: number,
   ) {
-    return this.historiesService.findAll(pageNumber ?? 0, pageSize ?? 100);
+    return this.historiesService.findAll(pageNumber ?? 1, pageSize ?? 100);
   }
 }
