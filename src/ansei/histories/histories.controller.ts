@@ -6,6 +6,7 @@ import {
   RoleMatchingMode,
   Roles,
 } from 'nest-keycloak-connect';
+import { CheckHistoryDto } from './dto/check-history.dto';
 
 @Controller('ansei/histories')
 export class HistoriesController {
@@ -18,6 +19,12 @@ export class HistoriesController {
     @AuthenticatedUser() user: any,
   ) {
     return this.historiesService.create(createHistoryDto, user);
+  }
+
+  @Post('check')
+  @Roles({ roles: ['ansei-system:operator'], mode: RoleMatchingMode.ANY })
+  findOne(@Body() checkHistoryDto: CheckHistoryDto) {
+    return this.historiesService.check(checkHistoryDto);
   }
 
   @Post('failed')

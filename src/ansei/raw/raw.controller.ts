@@ -40,8 +40,9 @@ export class RawController {
     return this.rawService.findOne(+id);
   }
 
-  @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.rawService.remove(+id);
+  @Delete()
+  @Roles({ roles: ['ansei-system:super'], mode: RoleMatchingMode.ANY })
+  remove() {
+    return this.rawService.remove();
   }
 }

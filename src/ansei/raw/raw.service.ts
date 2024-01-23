@@ -58,7 +58,13 @@ export class RawService {
     return `This action returns a #${id} raw`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} raw`;
+  remove() {
+    return this.client
+      .send('deleteAllRaw', {})
+      .pipe(
+        catchError((error) =>
+          throwError(() => new RpcException(error.response)),
+        ),
+      );
   }
 }

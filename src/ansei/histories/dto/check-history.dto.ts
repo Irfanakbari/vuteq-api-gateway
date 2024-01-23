@@ -1,6 +1,6 @@
 import { IsNotEmpty } from 'class-validator';
 
-export class CreateHistoryDto {
+export class CheckHistoryDto {
   // @IsNotEmpty()
   // id: string;
 
@@ -8,5 +8,5 @@ export class CreateHistoryDto {
   po_number: string;
 
   @IsNotEmpty()
-  parts_number: string;
+  part_number: string;
 }

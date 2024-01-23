@@ -3,6 +3,7 @@ import { CreateHistoryDto } from './dto/create-history.dto';
 import { catchError, throwError } from 'rxjs';
 import { ClientProxy, RpcException } from '@nestjs/microservices';
 import { UserInfo } from '../../interfaces/userinfo.interface';
+import { CheckHistoryDto } from './dto/check-history.dto';
 
 @Injectable()
 export class HistoriesService {
@@ -38,6 +39,18 @@ export class HistoriesService {
       .send('createHistoryFailed', {
         ...createHistoryDto,
         operator: user.preferred_username,
+      })
+      .pipe(
+        catchError((error) =>
+          throwError(() => new RpcException(error.response)),
+        ),
+      );
+  }
+
+  check(checkHistoryDto: CheckHistoryDto) {
+    return this.client
+      .send('checkHistory', {
+        ...checkHistoryDto,
       })
       .pipe(
         catchError((error) =>
