@@ -14,19 +14,26 @@ export class RawService {
     try {
       const data = await this.excelService.readExcel(file);
       const transformedData = data.map((rowData: any) => ({
-        date: rowData['Date'] || null,
-        vendorCode: rowData['Vendor code'],
-        vendorName: rowData['Vendor name'],
-        receivingArea: rowData['Receiving Area'],
-        deliveryDate: rowData['Delivery date'] || null,
-        deliveryPeriod: parseInt(rowData['Delivery period']) || 0,
-        firm: rowData['Firm'],
-        classification: rowData['Classification'],
-        poNumber: rowData['PO number']?.toString(),
-        item: parseInt(rowData['Item']) || 0,
-        partsNumber: rowData['Parts number'],
-        partsName: rowData['Parts name'],
-        orderQuantity: parseInt(rowData['Order Quantity']) || 0,
+        po_id: rowData['PO ID'],
+        date: rowData['Date'],
+        delivery_date: rowData['Delivery Date'],
+        part_no: rowData['Part No'],
+        part_name: rowData['Part Name'],
+        quantity: rowData['Quantity'] ?? 0,
+        id_part:
+          rowData['ID Part'] !== null && rowData['ID Part'] !== undefined
+            ? rowData['ID Part'].toString()
+            : '',
+        barcode: rowData['Barcode'],
+        receiving_area: rowData['reciving area'],
+        po_no: rowData['PO No'],
+        model: rowData['Model'],
+        bagian_part: rowData['Bagian Part'],
+        delivery_period:
+          rowData['Del periode'] !== null &&
+          rowData['Del periode'] !== undefined
+            ? rowData['Del periode'].toString()
+            : '',
       }));
       return this.client
         .send('createRaw', transformedData)

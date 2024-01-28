@@ -4,9 +4,12 @@ export class CreateHistoryDto {
   // @IsNotEmpty()
   // id: string;
 
-  @IsNotEmpty()
-  po_number: string;
+  // @IsNotEmpty()
+  // po_no: string;
 
   @IsNotEmpty()
-  parts_number: string;
+  part_no: string;
+
+  @IsNotEmpty()
+  po_id: string;
 }

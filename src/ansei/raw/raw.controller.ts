@@ -17,7 +17,7 @@ export class RawController {
   constructor(private readonly rawService: RawService) {}
 
   @Post()
-  @Roles({ roles: ['ansei-system:super'], mode: RoleMatchingMode.ANY })
+  @Roles({ roles: ['ansei-super'], mode: RoleMatchingMode.ANY })
   @UseInterceptors(FileInterceptor('file'))
   create(
     @UploadedFile()
@@ -27,7 +27,7 @@ export class RawController {
   }
 
   @Get()
-  @Roles({ roles: ['ansei-system:super'], mode: RoleMatchingMode.ANY })
+  @Roles({ roles: ['ansei-super'], mode: RoleMatchingMode.ANY })
   findAll(
     @Query('page') pageNumber?: number,
     @Query('limit') pageSize?: number,
@@ -41,7 +41,7 @@ export class RawController {
   }
 
   @Delete()
-  @Roles({ roles: ['ansei-system:super'], mode: RoleMatchingMode.ANY })
+  @Roles({ roles: ['ansei-super'], mode: RoleMatchingMode.ANY })
   remove() {
     return this.rawService.remove();
   }

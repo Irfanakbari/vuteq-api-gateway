@@ -5,8 +5,8 @@ export class CheckHistoryDto {
   // id: string;
 
   @IsNotEmpty()
-  po_number: string;
+  po_id: string;
 
-  @IsNotEmpty()
-  part_number: string;
+  // @IsNotEmpty()
+  // part_number: string;
 }
