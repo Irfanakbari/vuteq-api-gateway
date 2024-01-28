@@ -13,7 +13,10 @@ export class HistoriesController {
   constructor(private readonly historiesService: HistoriesService) {}
 
   @Post()
-  @Roles({ roles: ['ansei-operator'], mode: RoleMatchingMode.ANY })
+  @Roles({
+    roles: ['vuteq-internal:ansei-operator'],
+    mode: RoleMatchingMode.ANY,
+  })
   create(
     @Body() createHistoryDto: CreateHistoryDto,
     @AuthenticatedUser() user: any,
@@ -22,13 +25,19 @@ export class HistoriesController {
   }
 
   @Post('check')
-  @Roles({ roles: ['ansei-operator'], mode: RoleMatchingMode.ANY })
+  @Roles({
+    roles: ['vuteq-internal:ansei-operator'],
+    mode: RoleMatchingMode.ANY,
+  })
   findOne(@Body() checkHistoryDto: CheckHistoryDto) {
     return this.historiesService.check(checkHistoryDto);
   }
 
   @Post('failed')
-  @Roles({ roles: ['ansei-operator'], mode: RoleMatchingMode.ANY })
+  @Roles({
+    roles: ['vuteq-internal:ansei-operator'],
+    mode: RoleMatchingMode.ANY,
+  })
   createFailed(
     @Body() createHistoryDto: CreateHistoryDto,
     @AuthenticatedUser() user: any,
@@ -37,7 +46,7 @@ export class HistoriesController {
   }
 
   @Get()
-  @Roles({ roles: ['ansei-super'], mode: RoleMatchingMode.ANY })
+  @Roles({ roles: ['vuteq-internal:ansei-super'], mode: RoleMatchingMode.ANY })
   findAll(
     @Query('page') pageNumber?: number,
     @Query('limit') pageSize?: number,
