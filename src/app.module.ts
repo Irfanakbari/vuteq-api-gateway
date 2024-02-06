@@ -17,6 +17,7 @@ import * as process from 'process';
 import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AnseiModule } from './ansei/ansei.module';
+import { WebsocketsModule } from './socket/socket.module';
 
 @Module({
   imports: [
@@ -38,6 +39,7 @@ import { AnseiModule } from './ansei/ansei.module';
     HealthModule,
     HpmdlvModule,
     AnseiModule,
+    WebsocketsModule,
   ],
   controllers: [AppController],
   providers: [

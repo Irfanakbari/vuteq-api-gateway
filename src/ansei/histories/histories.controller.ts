@@ -7,20 +7,25 @@ import {
   Roles,
 } from 'nest-keycloak-connect';
 import { CheckHistoryDto } from './dto/check-history.dto';
+import { WebsocketsGateway } from '../../socket/socket.gateway';
 
 @Controller('ansei/histories')
 export class HistoriesController {
-  constructor(private readonly historiesService: HistoriesService) {}
+  constructor(
+    private readonly historiesService: HistoriesService,
+    private readonly socketService: WebsocketsGateway,
+  ) {}
 
   @Post()
   @Roles({
     roles: ['vuteq-internal:ansei-operator'],
     mode: RoleMatchingMode.ANY,
   })
-  create(
+  async create(
     @Body() createHistoryDto: CreateHistoryDto,
     @AuthenticatedUser() user: any,
   ) {
+    await this.socketService.broadcast();
     return this.historiesService.create(createHistoryDto, user);
   }
 
