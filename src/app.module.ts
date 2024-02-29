@@ -18,6 +18,7 @@ import { ConfigModule } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AnseiModule } from './ansei/ansei.module';
 import { WebsocketsModule } from './socket/socket.module';
+import { SewingModule } from './sewing/sewing.module';
 
 @Module({
   imports: [
@@ -40,6 +41,7 @@ import { WebsocketsModule } from './socket/socket.module';
     HpmdlvModule,
     AnseiModule,
     WebsocketsModule,
+    SewingModule,
   ],
   controllers: [AppController],
   providers: [

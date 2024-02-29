@@ -39,6 +39,14 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
           port: 3400,
         },
       },
+      {
+        name: 'SEWING_SERVICE',
+        transport: Transport.TCP,
+        options: {
+          host: 'localhost',
+          port: 3500,
+        },
+      },
     ]),
   ],
   exports: [ClientsModule],
