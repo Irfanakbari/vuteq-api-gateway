@@ -1,3 +1,5 @@
+// clients.module.ts
+
 import { Global, Module } from '@nestjs/common';
 import { ClientsModule, Transport } from '@nestjs/microservices';
 
@@ -9,7 +11,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'AUTH_SERVICE',
         transport: Transport.TCP,
         options: {
-          host: 'host.docker.internal', // Mengganti host dengan host.docker.internal
+          host: 'localhost',
           port: 3100,
         },
       },
@@ -17,7 +19,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'PALLET_SERVICE',
         transport: Transport.TCP,
         options: {
-          host: 'host.docker.internal', // Mengganti host dengan host.docker.internal
+          host: 'localhost',
           port: 3200,
         },
       },
@@ -25,7 +27,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'HPM_DLV_SERVICE',
         transport: Transport.TCP,
         options: {
-          host: 'host.docker.internal', // Mengganti host dengan host.docker.internal
+          host: 'localhost',
           port: 3300,
         },
       },
@@ -33,7 +35,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'ANSEI_SERVICE',
         transport: Transport.TCP,
         options: {
-          host: 'host.docker.internal', // Mengganti host dengan host.docker.internal
+          host: 'localhost',
           port: 3400,
         },
       },
@@ -41,7 +43,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'SEWING_SERVICE',
         transport: Transport.TCP,
         options: {
-          host: 'host.docker.internal', // Mengganti host dengan host.docker.internal
+          host: 'localhost',
           port: 3500,
         },
       },
