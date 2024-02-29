@@ -11,7 +11,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'AUTH_SERVICE',
         transport: Transport.TCP,
         options: {
-          host: 'localhost',
+          host: '192.168.1.15',
           port: 3100,
         },
       },
@@ -19,7 +19,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'PALLET_SERVICE',
         transport: Transport.TCP,
         options: {
-          host: 'localhost',
+          host: '192.168.1.15',
           port: 3200,
         },
       },
@@ -27,7 +27,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'HPM_DLV_SERVICE',
         transport: Transport.TCP,
         options: {
-          host: 'localhost',
+          host: '192.168.1.15',
           port: 3300,
         },
       },
@@ -35,7 +35,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'ANSEI_SERVICE',
         transport: Transport.TCP,
         options: {
-          host: 'localhost',
+          host: '192.168.1.15',
           port: 3400,
         },
       },
@@ -43,7 +43,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'SEWING_SERVICE',
         transport: Transport.TCP,
         options: {
-          host: 'localhost',
+          host: '192.168.1.15',
           port: 3500,
         },
       },
