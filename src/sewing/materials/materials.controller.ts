@@ -11,7 +11,6 @@ import {
 import { MaterialsService } from './materials.service';
 import { CreateMaterialDto } from './dto/create-material.dto';
 import { UpdateMaterialDto } from './dto/update-material.dto';
-import { RoleMatchingMode, Roles } from 'nest-keycloak-connect';
 
 @Controller('sewing/materials')
 export class MaterialsController {
@@ -23,7 +22,6 @@ export class MaterialsController {
   }
 
   @Get()
-  @Roles({ roles: ['vuteq-internal:sewing-super'], mode: RoleMatchingMode.ANY })
   findAll(
     @Query('page') pageNumber?: number,
     @Query('limit') pageSize?: number,
