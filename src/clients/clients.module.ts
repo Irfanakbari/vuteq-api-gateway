@@ -43,7 +43,7 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
         name: 'SEWING_SERVICE',
         transport: Transport.TCP,
         options: {
-          host: '192.168.1.15',
+          host: 'localhost',
           port: 3500,
         },
       },
